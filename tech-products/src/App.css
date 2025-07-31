@@ -1,0 +1,200 @@
+.app{
+    overflow-x: hidden;
+}
+.p-details{
+  background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('details-bg.jpg');
+  background-size: cover; background-position: center; color: white;
+}
+.cta{
+  font-size: 25px !important; border-radius: 5 !important; border: 3px solid silver !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* or white depending on contrast */
+  border-radius: 50%;
+}
+.hero-section {
+  min-height: 90vh;
+  background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('home-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 3rem 1rem;
+  backdrop-filter: brightness(0.1);
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.success-sect {
+  max-width: 900px;
+  margin: auto;
+}
+
+.success-sect i {
+  color: green;
+}
+
+/*PRODUCTSLIST*/
+
+.inputt{
+  width: 60%; background-color: #ffffff; border: 1px solid black; border-radius: 0; outline: none; padding: 1%;
+  color: black;
+}
+.cartt{
+  font-size: 40px;
+}
+.btnn{
+  background: none; border: none;
+}
+
+/*PRODUCTSDETAILS*/
+
+.block label{
+  display: block; padding: 1%;
+}
+.block input{
+  margin-right: 2% !important;
+}
+.details:hover {
+  transform: scale(1.05);
+}
+
+/*CART*/
+
+.table-div{
+  width: 90%; height: 100%;
+}
+.btn-hov:hover{
+  color: #ffffff !important;
+}
+
+/*PAYMENTBUTTON*/
+
+.addnew-form{
+  width: 80vw;
+}
+.addnew-form input, .addnew-form select{
+  width: 90%; border: 1px solid black; border-radius: 0; outline: none; padding: 1%;
+  background-color: #ffffff; color: black;
+}
+
+/*CHECKOUT*/
+.success-sect{
+  position: absolute; width: 100%; height: 100%; background: #ffffff;
+}
+.success-sect p{
+  margin-top: 20%;
+}
+.spinn{
+  font-size: 40px; position: absolute; top: 50%; left: 35%;
+}
+
+
+.menu-icon{
+  display: none; cursor: pointer; padding: 10px;
+}
+.ull{
+  display: flex;
+}
+
+
+
+@media screen and (max-width: 991.98px) {/*720px*/
+  
+  .navbar-toggler {
+  border: none;
+}
+
+.toggler-icon {
+  width: 25px !important;
+  height: 3px !important;
+  background-color: white !important;
+  margin: 5px 0;
+  transition: 0.4s;
+  display: block;
+}
+
+.navbar-toggler.open .toggler-icon:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.open .toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.open .toggler-icon:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.navv{
+    align-items: center;
+}
+.navbar-custom {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Bootstrap's default navbar z-index */
+  }
+
+  body {
+    padding-top: 56px; /* Offset for fixed navbar height */
+  }
+
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: 100% 100%;
+  margin: 0 25% !important;
+  color: red !important;
+  background-color: grey !important;
+}
+
+.check{
+  padding: 0% !important; padding-left: 5% !important; margin: 0% !important;
+}
+.cat{
+  width: 70%; margin-left: 15%;
+}
+.card{
+  padding: 0; margin: 3% !important;
+}
+.p-details{
+  padding: 0% !important;
+}
+.checkout{
+  padding: 2% !important;
+}
+.checkout-h2{
+  margin: 0% !important;
+}
+.checkout-col1{
+  margin-top: 2% !important;
+}
+
+  .table-div{
+    width: 100% !important;
+  }
+  .respon{
+    padding: 3% !important;
+  }
+  .cta{
+    width: 90% !important;
+  }
+  .inputt{
+    width: 90%;
+  }
+  .responlist{
+    padding: 5% !important;
+  }
+  .cta2{
+    width: 70% !important;
+  }
+  .cartt{
+    margin-right: 3% !important;
+  }
+  .row-deets{
+    padding: 4% !important;
+  }
+}

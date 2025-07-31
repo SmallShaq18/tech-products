@@ -1,0 +1,75 @@
+// src/api/fetchProducts.js
+export const fetchProducts = async (category = 'smartphones') => {
+  const res = await fetch(`https://dummyjson.com/products/category/${category}`);
+  const data = await res.json();
+  return data.products; // returns an array
+};
+
+export const fetchProductsByCategory = async (category) => {
+  const res = await fetch(`https://dummyjson.com/products/category/${category}`);
+  const data = await res.json();
+  return data.products; // array of products
+};
+
+// fetchFeaturedProducts.js
+
+const techCategories = [
+  'smartphones',
+  'laptops',
+  'mobile-accessories',
+  'tablets',
+  'automotive',
+  'lighting',
+];
+
+export const fetchFeaturedProducts = async () => {
+  const selectedProducts = [];
+
+  for (const category of techCategories) {
+    try {
+      const res = await fetch(`https://dummyjson.com/products/category/${category}`);
+      const data = await res.json();
+      
+      // Pick 1 random product from each category
+      if (data.products.length >= 2) {
+        const shuffled = [...data.products].sort(() => 0.5 - Math.random());
+        selectedProducts.push(shuffled[0], shuffled[1]);
+      } else if (data.products.length === 1) {
+        selectedProducts.push(data.products[0]);
+      }
+      // If no products, skip this category
+
+    } catch (err) {
+      console.error(`Failed to fetch ${category}:`, err);
+    }
+  }
+
+  return selectedProducts;
+};
+
+// utils/fetchTestimonials.js (or inside Home.jsx)
+
+export const fetchTestimonials = async () => {
+  const [commentsRes, usersRes] = await Promise.all([
+    fetch('https://dummyjson.com/comments'),
+    fetch('https://dummyjson.com/users')
+  ]);
+
+  const commentsData = await commentsRes.json();
+  const usersData = await usersRes.json();
+
+  // Pair random users with comments
+  const testimonials = commentsData.comments.slice(0, 6).map((comment, i) => {
+    const user = usersData.users[i];
+    return {
+      name: `${user.firstName} ${user.lastName}`,
+      image: user.image,
+      quote: comment.body
+    };
+  });
+
+  return testimonials;
+};
+
+
+
