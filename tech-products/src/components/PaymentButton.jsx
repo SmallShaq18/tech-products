@@ -183,10 +183,6 @@ function validate() {
 
       </form>
 
-      {/*<button onClick={() => setIsSection(true)} className="btn btn-outline-primary m-2">
-  Show Success Section
-</button>*/}
-
       
       {/* Success Section */}
 
@@ -194,35 +190,15 @@ function validate() {
         setTimeout(() => {
       navigate("/success", {
         state: {
-          firstname: "Abdulsamad",
-          lastname: "Ibrahim",
-          address: "Shango Quarters",
-          state: "Niger"
+          firstname,
+          lastname,
+          address,
+          state,
         }
       });
     }, 0)
       )
       }
-
-      {/*{isSection && (
-      
-  <div className="success-sect text-center mt-5 p-4 border rounded shadow-sm bg-light">
-    
-    <div className="mb-3 text-success">
-      <i className="fas fa-check-circle fa-3x"></i>
-    </div>
-    
-    <p className="fs-5 fw-semibold text-capitalize text-dark">
-      {`Congratulations ${firstname} ${lastname}! You have placed your order successfully and it will be delivered to
-       ${address} in ${state} State soon. Keep in touch.`}
-    </p>
-
-    <Link to="/productsList" className="btn btn-dark mt-3">
-      Back To Products
-    </Link>
-  </div>
-)
-}*/}
 
 
     </div>
