@@ -50,7 +50,7 @@ export default function CheckoutPage () {
             <div className="d-flex">
             <img src={product.thumbnail} width="40%" height="60%" alt={product.name} className="img img-fluid imgg" />
               <div className="mt-5">
-                <h5 className="text-uppercase">{product.name}</h5>
+                <h5 className="text-uppercase">{product.title}</h5>
                 <h5 className='fw-bold px-2'>{`$${product.price}`}</h5>
               </div>
             </div>
