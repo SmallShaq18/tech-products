@@ -33,6 +33,10 @@ function Table({ cartItems, setCartItems, totalAmount }) {
 
     return(
 
+       <>
+       <button onClick={() => navigate(-1)} className="m-3 mb-0 text-dark d-lg-none btn btn-sm btn-outline-dark">
+        ← Back
+      </button>
        <div className="d-flex justify-content-center table-div container">
             <div className="table-div table-responsive">
             <h5 className='my-4'>Number Of Products: {cartItems.length}</h5>  
@@ -85,6 +89,7 @@ function Table({ cartItems, setCartItems, totalAmount }) {
               <Print ref={contentRef} cartItems={cartItems} totalAmount={totalAmount}  />
             </div>
         </div>
+        </>
 
     );
 }

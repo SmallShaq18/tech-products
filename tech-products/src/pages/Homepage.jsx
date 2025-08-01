@@ -60,7 +60,8 @@ export default function Home() {
           <p className='text-center fw-bold mt-5'>Loading products... </p>)}
       </div>
 
-      <h4 className="text-center fw-bold my-3">What Our Customers Say</h4>
+      <h4 className="text-center fw-bold mt-3">What Our Customers Say</h4>
+      <small className='mb-3'>(swipe to see more)</small>
       {/* Mobile Carousel */}
       <div className="d-lg-none">
         <div id="testmonialsCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -69,7 +70,7 @@ export default function Home() {
       testimonials.map((t, i) => (
       <div key={i} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
         <div className="d-flex border p-3 rounded bg-light h-100 shadow-sm justify-content-center">
-          <div className="">
+          <div className="d-flex align-items-center">
             <img src={t.image} alt={t.name} className="rounded-circle me-3" width="50" height="50" />
             <h6 className="mb-0">{t.name}</h6>
           </div>
@@ -79,10 +80,10 @@ export default function Home() {
       )) ) : (
       <p className='text-center fw-bold'>Loading testimonials... </p>)}
           </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#testmonialsCarousel" data-bs-slide="prev">
+          <button className="d-none carousel-control-prev" type="button" data-bs-target="#testmonialsCarousel" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#testmonialsCarousel" data-bs-slide="next">
+          <button className="d-none carousel-control-next" type="button" data-bs-target="#testmonialsCarousel" data-bs-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
           </button>
         </div>

@@ -10,6 +10,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import CheckoutPageCart from './pages/CheckoutPageCart';
 import Cart from './pages/Cart';
 import Success from './pages/Success';
+import Failure from './pages/Failure';
 import './App.css';
 
 export default function App(){
@@ -48,6 +49,7 @@ export default function App(){
       <Route path="/checkoutPageCart" element={<CheckoutPageCart totalAmount={totalAmount} cartItems={cartItems} />} />
       <Route path="/checkoutPage/:productId" element={<CheckoutPage />} />
       <Route path="/success" element={<Success />} />
+      <Route path="/failure" element={<Failure />} />
       <Route path="*" element={<NoPage />} />
 
     </Routes>

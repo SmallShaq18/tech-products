@@ -74,8 +74,13 @@ function validate() {
       })
       .catch(error => {
         // Handle payment failure
+        setIsLoading(true);
         onError(error.message || 'Payment failed')
         console.log('fail');
+        // 👇 Navigate to the failure page
+        setTimeout(() => {
+          navigate("/failure");
+        }, 2000);
       });
       
       return;
@@ -88,10 +93,11 @@ function validate() {
 
 
   return (
-    <div className="d-flex justify-content-center align-items-center mt-3 paymentbtn position-relative">
+    <div className="">
       
 
-      {/* Payment form */}
+      <div className={isLoading ? "blur-content" : "d-flex justify-content-center align-items-center mt-3 paymentbtn position-relative"}>
+  {/* Payment form */}
       <form className="addnew-form ">
 
       <h4>Shipping Info</h4>
@@ -170,7 +176,12 @@ function validate() {
         
 
 
-        {isLoading && <i className="spinn fa-solid fa-spinner"></i>}
+        {/* Loading Spinner */}
+      {isLoading && (
+  <div className="loading-overlay">
+    <div className="spinner-border text-primary" role="status"></div>
+  </div>
+)}
 
         {isBtnActive ? (
           <button className=" p-2 btn-dark text-white fw-bold" disabled={isLoading} onClick={handlePayment}>PLACE ORDER</button>
@@ -182,6 +193,9 @@ function validate() {
         
 
       </form>
+</div>
+
+      
 
       
       {/* Success Section */}
@@ -199,8 +213,6 @@ function validate() {
     }, 0)
       )
       }
-
-
     </div>
   );
   
@@ -222,10 +234,10 @@ const PaymentService = (amount, isSection, setIsSection) => {
           console.log(`Payment successful. Amount: ${amount}`);
           setTimeout(() => {
         setIsSection(!isSection);
-      }, 5000);
+      }, 2000);
           resolve('');
         }
-      }, 1500); // Simulate some processing time
+      }, 1000); // Simulate some processing time
     }); 
 
   };

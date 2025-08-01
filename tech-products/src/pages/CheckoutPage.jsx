@@ -58,7 +58,7 @@ export default function CheckoutPage () {
 
       <div className="col-md-8">
         <PaymentButton amount={product.price} onSuccess={handlePaymentSuccess} onError={handlePaymentError} />
-        {paymentStatus && <p>{`${paymentStatus} - $${product.price}`}</p>}
+        {/*paymentStatus && <p>{`${paymentStatus} - $${product.price}`}</p>*/}
       </div>
     </div>
   );
