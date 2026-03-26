@@ -1,0 +1,200 @@
+/* ============================================================
+   global.css — TechHub base reset & document-level rules
+   All design tokens, components, and theme live in:
+   techhub-premium.css (import that AFTER this file)
+   ============================================================ */
+
+/* ─── Box model ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ─── Document ───────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Font + color set by techhub-premium.css via CSS variables */
+  background-color: #f4f5f7; /* matches --th-bg, avoids flash before CSS loads */
+  color: #0c0e11;             /* matches --th-ink */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─── Typography reset ───────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Link reset ─────────────────────────────────────────── */
+/* Links are styled per-component; we only strip browser defaults here */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Media reset ────────────────────────────────────────── */
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Form reset ─────────────────────────────────────────── */
+button, input, textarea, select {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ─── List reset ─────────────────────────────────────────── */
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Table reset ────────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ─── App root ───────────────────────────────────────────── */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Pages sit below the fixed nav and grow to fill remaining space */
+.app > *:not(.th-nav):not(.th-nav__spacer) {
+  flex: 1;
+}
+
+/* ─── Accessibility ──────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #1a5cff;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Hide visually but keep accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Scrollbar (Webkit) ─────────────────────────────────── */
+::-webkit-scrollbar              { width: 6px; height: 6px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: #d4d8df; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover  { background: #b0b6c2; }
+
+/* ─── Selection ──────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 87, 255, 0.15);
+  color: inherit;
+}
+
+/* ─── Toastify override — position fix ───────────────────── */
+/* Ensure toasts sit above the fixed nav (z-index 300) */
+.Toastify__toast-container {
+  z-index: 1000 !important;
+}
+
+.Toastify__toast {
+  font-family: 'Cabinet Grotesk', sans-serif !important;
+  font-size: 0.86rem !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.10) !important;
+}
+
+/* ─── Responsive nav fallbacks for no Bootstrap utilities ─── */
+.th-nav__links {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.th-nav__hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .th-nav__links {
+    display: flex;
+  }
+
+  .th-nav__hamburger,
+  .th-nav__mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .th-nav__actions .th-nav__icon-btn,
+  .th-nav__actions .th-nav__text-link,
+  .th-nav__actions .th-btn-nav {
+    display: none;
+  }
+
+  .th-nav__actions .th-nav__hamburger {
+    display: inline-flex;
+  }
+}
+
+.th-nav__user-name {
+  display: inline-block;
+}
+
+.th-nav__mobile {
+  display: block;
+}
