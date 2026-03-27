@@ -54,6 +54,8 @@ export default function Layout() {
   const navLinkClass = ({ isActive }) =>
     `th-nav__link ${isActive ? 'th-nav__link--active' : ''}`;
 
+  //console.log('user', user);
+
   return (
     <>
       <header className={`th-nav${scrolled ? ' th-nav--scrolled' : ''}`}>
